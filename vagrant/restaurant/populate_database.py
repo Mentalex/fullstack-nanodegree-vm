@@ -36,6 +36,11 @@ session.commit()
 # READ RESTAURANTS #
 # Read all Restaurants
 restaurants = session.query(Restaurant).all()
+print restaurants
+
+# Read the first resturant.
+# firstResult = session.query(Restaurant).first()
+# print firstResult.name
 
 
 # INSERT MENUITEM #
@@ -51,5 +56,7 @@ session.add(cheesepizza)
 session.commit()
 
 # READ MENUITEMS #
-# Read all MenuItems
-print(session.query(MenuItem).all())
+# Read all MenuItems and show its name.
+items = session.query(MenuItem).all()
+for item in items:
+    print item.name
